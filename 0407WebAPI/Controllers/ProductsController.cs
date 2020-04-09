@@ -8,7 +8,7 @@ using System.Web.Http;
 
 namespace _0407WebAPI.Controllers
 {
-    
+    [Route("Api/v1/products")]
     public class ProductsController : ApiController
     {
         static List<Product> products = new List<Product>
@@ -21,16 +21,35 @@ namespace _0407WebAPI.Controllers
         {
             return products;
         }
-
-        public IHttpActionResult GetProduct(int id)
+        [HttpGet]
+        public Product Product(int id)
         {
             var product = products.FirstOrDefault((p) => p.Id == id);
-            return Ok(product);
+            //if (product == null)
+            //{
+            //    return NotFound();
+            //}
+            return product;
         }
-        public IHttpActionResult PostProduct(Product product)
+        [HttpGet]
+        [Route("Products/FindProductByCache/{id:int}")]
+        public IHttpActionResult FindProductByCache([FromBody]int id)
+        {
+            if (id > 5)
+            {
+                throw new Exception("error");
+            }
+            var product = products.FirstOrDefault((p) => p.Id == id);
+            product.Name = "FindProduct";
+            return Json<Product>(product);
+        }
+        [Route("Add")]
+        public HttpResponseMessage PostProduct([FromUri]Product product)
         {
             products.Add(product);
-            return Created(Url.Link("DefaultApi",new { id =product.Id}),product);
+            CustHttpResponseMessage custHttpResponseMessage = new CustHttpResponseMessage();
+            return custHttpResponseMessage.GetSuccessMessage("成功", $"Productid={product.Id}");
+
         }
     }
 }

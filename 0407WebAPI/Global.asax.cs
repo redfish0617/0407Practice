@@ -18,6 +18,8 @@ namespace _0407WebAPI
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            GlobalConfiguration.Configuration.MessageHandlers.Add(new ActionFilter.MessageLoggingHandler());
         }
     }
 }

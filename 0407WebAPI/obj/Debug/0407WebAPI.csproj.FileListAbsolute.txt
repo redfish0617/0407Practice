@@ -90,3 +90,6 @@ C:\Users\p10342919\Desktop\程式\0407WebAPI\0407WebAPI\obj\Debug\0407WebAPI.csp
 C:\Users\p10342919\Desktop\程式\0407WebAPI\0407WebAPI\obj\Debug\0407WebAPI.csproj.CopyComplete
 C:\Users\p10342919\Desktop\程式\0407WebAPI\0407WebAPI\obj\Debug\0407WebAPI.dll
 C:\Users\p10342919\Desktop\程式\0407WebAPI\0407WebAPI\obj\Debug\0407WebAPI.pdb
+C:\Users\p10342919\Desktop\程式\0407WebAPI\0407WebAPI\bin\NLog.config
+C:\Users\p10342919\Desktop\程式\0407WebAPI\0407WebAPI\bin\NLog.dll
+C:\Users\p10342919\Desktop\程式\0407WebAPI\0407WebAPI\bin\NLog.xml
